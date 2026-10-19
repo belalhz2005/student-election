@@ -1,6 +1,7 @@
-data/
 node_modules/
-tunnel.log
-public/qr.png
-public/link.txt
-.env
+dist/
+data/
+*.log
+.env*
+!.env.example
+.DS_Store

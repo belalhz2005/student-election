@@ -1,46 +1,21 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Student Council Election</title>
-<link rel="icon" href="/img/logo-dentistry.jpg">
-<link rel="stylesheet" href="/style.css">
-</head>
-<body data-title="title_vote">
-<div class="wrap">
-  <div class="logos"><img src="/img/logo-spu.jpg" alt="Syrian Private University / الجامعة السورية الخاصة"><img src="/img/logo-dentistry.jpg" alt="Faculty of Dentistry / كلية طب الأسنان"></div>
-  <div class="row top"><h1 data-i18n="h_vote"></h1><button type="button" class="ghost sm langbtn" data-i18n="lang_btn"></button></div>
-  <p class="sub" data-i18n="sub"></p>
-
-  <div id="closed" class="card" data-i18n="closed" hidden></div>
-
-  <form id="s1" class="card" hidden>
-    <h2 data-i18n="h_details"></h2>
-    <label for="name" data-i18n="l_name"></label>
-    <input id="name" dir="auto" autocomplete="name" required>
-    <label for="uid" data-i18n="l_uid"></label>
-    <input id="uid" dir="ltr" inputmode="numeric" autocomplete="off" maxlength="7" required>
-    <button class="full" id="go" data-i18n="btn_continue"></button>
-    <div id="e1" class="msg err" hidden></div>
-  </form>
-
-  <form id="s2" class="card" hidden>
-    <h2 data-i18n="h_choose"></h2>
-    <p class="mute" id="yr" dir="auto"></p>
-    <div id="cands"></div>
-    <button class="full" id="vote" data-i18n="btn_submit" disabled></button>
-    <button type="button" class="ghost full" id="back" data-i18n="btn_back"></button>
-    <p class="mute" data-i18n="note_final"></p>
-    <div id="e2" class="msg err" hidden></div>
-  </form>
-
-  <div id="s3" class="card" hidden>
-    <h2 data-i18n="h_thanks"></h2>
-    <div class="msg ok" data-i18n="m_recorded"></div>
-  </div>
-</div>
-<script src="/i18n.js"></script>
-<script src="/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPU Dental Student Council Elections | انتخابات مجلس طلبة كلية طب الأسنان</title>
+    <meta name="description" content="Official secure voting and election management system for the Syrian Private University Faculty of Dentistry Student Council, featuring automated academic year verification, ballot integrity, real-time results, and full audit controls." />
+    <meta property="og:title" content="SPU Dental Student Council Elections | انتخابات مجلس طلبة كلية طب الأسنان" />
+    <meta property="og:description" content="Official secure voting and election management system for the Syrian Private University Faculty of Dentistry Student Council, featuring automated academic year verification, ballot integrity, real-time results, and full audit controls." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+

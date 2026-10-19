@@ -1,14 +1,15 @@
 # Render Blueprint: New > Blueprint > pick this repo. Secrets are asked for in the dashboard (never put them in Git).
 services:
   - type: web
-    name: student-election
+    name: spu-dental-elections
     runtime: node
     plan: free
-    region: frankfurt
-    buildCommand: npm install --omit=optional
-    startCommand: node server.js
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     healthCheckPath: /api/status
     envVars:
+      - key: NODE_VERSION
+        value: "22"
       - key: TRUST_PROXY
         value: "1"
       - key: RATE_LIMIT
