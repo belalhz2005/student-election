@@ -1,0 +1,7 @@
+{
+  "name": "election",
+  "private": true,
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "optionalDependencies": { "qrcode": "^1.5.4" }
+}

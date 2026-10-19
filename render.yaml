@@ -1,0 +1,21 @@
+# Render Blueprint: New > Blueprint > pick this repo. Secrets are asked for in the dashboard (never put them in Git).
+services:
+  - type: web
+    name: student-election
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install --omit=optional
+    startCommand: node server.js
+    healthCheckPath: /api/status
+    envVars:
+      - key: TRUST_PROXY
+        value: "1"
+      - key: RATE_LIMIT
+        value: "1200"
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: TURSO_DATABASE_URL
+        sync: false
+      - key: TURSO_AUTH_TOKEN
+        sync: false
