@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Election Admin</title>
+<link rel="icon" href="/img/logo-dentistry.jpg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body data-title="title_admin">
+<div class="wrap" id="login">
+  <div class="logos"><img src="/img/logo-spu.jpg" alt="Syrian Private University / الجامعة السورية الخاصة"><img src="/img/logo-dentistry.jpg" alt="Faculty of Dentistry / كلية طب الأسنان"></div>
+  <div class="row top"><h1 data-i18n="h_admin"></h1><button type="button" class="ghost sm langbtn" data-i18n="lang_btn"></button></div>
+  <form class="card" id="lf">
+    <label for="pw" data-i18n="l_pw"></label>
+    <input id="pw" type="password" dir="ltr" autocomplete="current-password" required>
+    <button class="full" data-i18n="btn_login"></button>
+    <div id="le" class="msg err" hidden></div>
+  </form>
+</div>
+
+<div class="wrap wide" id="app" hidden>
+  <div class="logos small"><img src="/img/logo-spu.jpg" alt="Syrian Private University / الجامعة السورية الخاصة"><img src="/img/logo-dentistry.jpg" alt="Faculty of Dentistry / كلية طب الأسنان"></div>
+  <div class="row">
+    <h1><span data-i18n="h_admin"></span> <span id="st" class="badge"></span></h1>
+    <button id="toggle"></button>
+    <button type="button" class="ghost sm langbtn" data-i18n="lang_btn"></button>
+    <button class="ghost" id="logout" data-i18n="btn_logout"></button>
+  </div>
+  <nav id="tabs">
+    <button data-t="results" class="on" data-i18n="tab_results"></button>
+    <button data-t="voters" data-i18n="tab_voters"></button>
+    <button data-t="setup" data-i18n="tab_setup"></button>
+    <button data-t="tools" data-i18n="tab_tools"></button>
+  </nav>
+  <div id="note" class="msg ok" hidden></div>
+
+  <section id="t-results"></section>
+
+  <section id="t-voters" hidden>
+    <div class="card">
+      <div class="row">
+        <input id="q" data-i18n-ph="ph_search" dir="auto">
+        <select id="fy"></select>
+        <label class="chk"><input type="checkbox" id="flagged"><span data-i18n="only_flagged"></span></label>
+      </div>
+      <p class="mute" id="vcount"></p>
+      <p class="mute" data-i18n="d_flags"></p>
+      <div class="tablewrap"><table><thead><tr><th data-i18n="th_time"></th><th data-i18n="th_id"></th><th data-i18n="th_name"></th><th data-i18n="th_year"></th><th data-i18n="th_action"></th></tr></thead><tbody id="vb"></tbody></table></div>
+    </div>
+    <div class="card">
+      <h2 data-i18n="h_attempts"></h2>
+      <p class="mute" data-i18n="d_attempts"></p>
+      <div class="tablewrap"><table><thead><tr><th data-i18n="th_time"></th><th data-i18n="th_id"></th><th data-i18n="th_name"></th><th data-i18n="th_reason"></th></tr></thead><tbody id="ab"></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="t-setup" hidden>
+    <div class="card">
+      <h2 data-i18n="h_years"></h2>
+      <p class="mute" data-i18n="d_years"></p>
+      <form id="cf" class="row"><input id="cp" dir="ltr" data-i18n-ph="ph_prefix" inputmode="numeric" required><input id="cl" dir="auto" data-i18n-ph="ph_label" required><button data-i18n="btn_addupd"></button></form>
+    </div>
+    <div id="cohorts"></div>
+  </section>
+
+  <section id="t-tools" hidden>
+    <div class="card">
+      <h2 data-i18n="h_qr"></h2>
+      <p class="mute" data-i18n="d_qr"></p>
+      <div id="qrbox" hidden><img id="qr" alt="QR" width="260" height="260"><p class="mute" id="qrlink" dir="ltr"></p></div>
+    </div>
+    <div class="card">
+      <h2 data-i18n="h_roster"></h2>
+      <p class="mute" data-i18n="d_roster"></p>
+      <textarea id="rt" dir="ltr" placeholder="2240207, Ahmad Ali Hassan"></textarea>
+      <div class="row mt"><button id="imp" data-i18n="btn_import"></button><button class="ghost" id="clr" data-i18n="btn_clear"></button></div>
+      <p class="mute" id="rinfo"></p>
+    </div>
+    <div class="card">
+      <h2 data-i18n="h_export"></h2>
+      <div class="row"><a class="btn" href="/report" target="_blank" rel="noopener" data-i18n="ex_pdf"></a><a class="btn ghost" href="/api/admin/export/results.txt" data-i18n="ex_txt"></a><a class="btn ghost" href="/api/admin/export/results.csv" data-i18n="ex_results"></a><a class="btn ghost" href="/api/admin/export/voters.csv" data-i18n="ex_voters"></a></div>
+    </div>
+    <div class="card">
+      <h2 data-i18n="h_reset"></h2>
+      <p class="mute" data-i18n="d_reset"></p>
+      <div class="row"><input id="rc" dir="ltr" data-i18n-ph="ph_reset"><button class="danger" id="rs" data-i18n="btn_reset"></button></div>
+    </div>
+  </section>
+</div>
+<script src="/i18n.js"></script>
+<script src="/admin.js"></script>
+</body>
+</html>

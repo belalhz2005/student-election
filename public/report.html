@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Election Results Report</title>
+<link rel="icon" href="/img/logo-dentistry.jpg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body data-title="title_report">
+<div class="wrap wide">
+  <div class="row top noprint">
+    <a class="btn ghost sm" href="/admin" data-i18n="btn_back"></a>
+    <div class="row">
+      <label class="chk"><input type="checkbox" id="inc"><span data-i18n="chk_voters"></span></label>
+      <button type="button" class="ghost sm langbtn" data-i18n="lang_btn"></button>
+      <button type="button" id="print" data-i18n="btn_print"></button>
+    </div>
+  </div>
+  <p class="mute noprint" data-i18n="r_hint"></p>
+  <div id="need" class="msg err" data-i18n="need_login" hidden></div>
+  <div id="report" hidden>
+    <div class="logos"><img src="/img/logo-spu.jpg" alt="Syrian Private University / الجامعة السورية الخاصة"><img src="/img/logo-dentistry.jpg" alt="Faculty of Dentistry / كلية طب الأسنان"></div>
+    <h1 class="center" data-i18n="r_title"></h1>
+    <p class="mute center" id="meta"></p>
+    <div id="body"></div>
+    <div class="sign"><div data-i18n="r_sign"></div><div data-i18n="r_date"></div></div>
+  </div>
+</div>
+<script src="/i18n.js"></script>
+<script src="/report.js"></script>
+</body>
+</html>
